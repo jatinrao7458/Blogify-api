@@ -1,9 +1,8 @@
 const express = require('express')
 const app = express()
 const PORT =300
-app.get('/',(req,res)=>{
-    res.send("Welcome to the Blogify API")
-})
+const post_home_route = require('./routes/post_routes')
+app.use('/',post_home_route)
 app.get('/api/v1/posts',(req,res)=>{
     res.send('Sending all blogs...')
 })
